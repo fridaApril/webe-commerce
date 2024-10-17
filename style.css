@@ -1,0 +1,58 @@
+/* General Styles */
+body {
+    background-color: #a5bdff;
+}
+
+h1, h2 {
+    font-family: 'arial', sans-serif;
+}
+
+/* Article Image Styling */
+img {
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+/*About */
+  #about h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  #about p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  #about img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+
+/* Footer */
+footer {
+    margin-top: 50px;
+}
+
+/* Sidebar Links Styling */
+aside ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+aside ul li {
+    margin: 10px 0;
+}
+
+aside ul li a {
+    text-decoration: none;
+    color: #f7a2ff;
+}
+
+aside ul li a:hover {
+    text-decoration: underline;
+    color: #d99cf1;
+}
+

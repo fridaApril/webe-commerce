@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frida Web</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Custom styles for the navbar links with shadow effect */
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            text-shadow: 0 0 5px rgba(5, 5, 5, 0.5);
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            background: rgba(0, 123, 255, 0.5); /* Change to your preferred shadow color */
+            bottom: -5px; /* Adjust position as needed */
+            left: 0;
+            transition: all 0.3s ease;
+            transform: scaleX(0);
+        }
+
+        .nav-link:hover:after {
+            transform: scaleX(1);
+        }
+
+        /* Custom background for the header */
+        header {
+            background-image: url("image/keranjang1.jpeg"); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        header h1 {
+            font-size: 3rem;
+        }
+
+        header p {
+            font-size: 1.5rem;
+        }
+
+        /* Set a fixed height for header */
+        header {
+            height: 300px; /* Adjust this value depending on your needs */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="text-white text-center p-4">
+        <h1>E-COMMERCE</h1>
+        <p>Memahami Perdagangan Modern di Dunia Maya</p>
+    </header>
+
+   <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+        <div class="container">
+            <a class="navbar-brand" href="#">E-COMMERCE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <!-- Anchor links to different sections -->
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Kutipan">Kutipan</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>About</h2>
+                    <p>PENULIS : Adi Nugroho</p>
+                    <p>PENERBIT : Informatika Bandung</p>
+                    <p>Cetakan Pertama : April 2018</p>
+                    <p>ISBN : 979-3338-73-3</p>
+                    <p>Dalam buku ini menjelaskan tentang pengetahuan teknis dasar tentang internet dan perdagangan elektronik atau e-commerce, kemudian
+                        dilanjutkan tentang aspek-aspek manajerial di dunia maya atau cyberspace, dan diakhiri dengan sistem berbasis komputer untuk perdagangan elektronik itu sendiri. Buku ini sesuai untuk dibaca oleh manajer proyek IT yang 
+                        memiliki keinginan untuk mengembangkan sistem perdagangan elektronik atau e-commerce diperusahaannya.</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="image/buku.jpeg" class="img-fluid rounded" alt="About Us">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Gallery</h2>
+            <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="image/frida1.jpeg" class="d-block w-25 mx-auto rounded" alt="Gallery Image 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="image/frida2.jpeg" class="d-block w-25 mx-auto rounded" alt="Gallery Image 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="image/buku2.jpeg" class="d-block w-25 mx-auto rounded" alt="Gallery Image 3">
+                    </div>
+                </div>
+
+                <!-- Smaller, black-colored navigation arrows inside the carousel -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true" style="filter: invert(100%);"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true" style="filter: invert(100%);"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container mt-4" id="Kutipan">
+        <div class="row">
+            <!-- Article Section -->
+            <div class="col-md-8">
+                <article>
+                    <h2>Kutipan</h2>
+                    <p>E-commerce bukan hanya sekedar jual beli online,
+                        melainkan revolusi cara kita memahami dan menjalankan bisnis.
+                        Didalamnya, teknologi bukan hanya alat, tetapi jembatan yang menghubungkan kreativitas, kebutuhan,
+                        dan kepercayaan dalam satu ekosistem digital tanpa batas. 
+                    </p>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center p-3 mt-4">
+        <p>&copy; 2024 Frida Apriliani.</p>
+    </footer>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
